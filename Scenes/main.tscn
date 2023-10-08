@@ -30,3 +30,4 @@ offset_bottom = 1928.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_hr4mn")
+stretch_mode = 1

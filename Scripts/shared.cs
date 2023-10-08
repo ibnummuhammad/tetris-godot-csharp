@@ -22,14 +22,14 @@ public partial class shared : Node
 			{Tetromino.O, "Chicago, New York, Washington"},
 			{Tetromino.T, "Mumbai, New Delhi, Pune"}
 		};
-		var bigCities = new List<string>()
+		var bigCities = new List<Vector2>()
 		{
-			"New York",
-			"London",
-			"Mumbai",
-			"Chicago"
+			new Vector2(-1,0),
+			new Vector2(0,0),
+			new Vector2(1,0),
+			new Vector2(2,0)
 		};
-		GD.Print("baru");
+		GD.Print("baru11");
 		GD.Print(bigCities.GetType());
 		GD.Print(bigCities);
 	}

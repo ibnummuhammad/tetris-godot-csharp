@@ -18,3 +18,7 @@ config/icon="res://Assets/icon.svg"
 [dotnet]
 
 project/assembly_name="Tetris Godot C#"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0941176, 0.266667, 0.419608, 1)

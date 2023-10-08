@@ -9,11 +9,13 @@ public partial class shared : Node
 	}
 
 	private Dictionary<Tetromino, List<Vector2>> cells;
+	private List<List<Vector2>> wallKicksI;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		cells = new Dictionary<Tetromino, List<Vector2>>(){
+		cells = new Dictionary<Tetromino, List<Vector2>>()
+		{
 			{Tetromino.I,new List<Vector2>(){new Vector2(-1,0),new Vector2(0,0),new Vector2(1,0),new Vector2(2,0)}},
 			{Tetromino.J,new List<Vector2>(){new Vector2(-1,1),new Vector2(-1,0),new Vector2(0,0),new Vector2(1,0)}},
 			{Tetromino.L,new List<Vector2>(){new Vector2(1,1),new Vector2(-1,0),new Vector2(0,0),new Vector2(1,0)}},
@@ -22,9 +24,17 @@ public partial class shared : Node
 			{Tetromino.T,new List<Vector2>(){new Vector2(0,1),new Vector2(-1,0),new Vector2(0,0),new Vector2(1,0)}},
 			{Tetromino.Z,new List<Vector2>(){new Vector2(-1,1),new Vector2(0,1),new Vector2(0,0),new Vector2(1,0)}}
 		};
-		GD.Print("baru11");
-		GD.Print(cells.GetType());
-		GD.Print(cells);
+		wallKicksI = new List<List<Vector2>>()
+		{
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-2,0),new Vector2(1,0),new Vector2(-2,-1),new Vector2(1,2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(2,0),new Vector2(-1,0),new Vector2(2,1),new Vector2(-1,-2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(2,0),new Vector2(-1,2),new Vector2(2,-1)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(1,0),new Vector2(-2,0),new Vector2(1,-2),new Vector2(-2,1)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(2,0),new Vector2(-1,0),new Vector2(2,1),new Vector2(-1,-2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-2,0),new Vector2(1,0),new Vector2(-2,-1),new Vector2(1,2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(1,0),new Vector2(-2,0),new Vector2(1,-2),new Vector2(-2,1)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(2,0),new Vector2(-1,2),new Vector2(2,-1)}},
+		};
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

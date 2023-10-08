@@ -24,6 +24,10 @@ Shared="*res://Scripts/shared.gd"
 window/size/viewport_width=324
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="TetrisTutorial"
+
 [input]
 
 left={

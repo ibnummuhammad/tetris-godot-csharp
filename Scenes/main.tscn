@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mhs1q1xuyavl"]
+[gd_scene load_steps=3 format=3 uid="uid://mhs1q1xuyavl"]
 
 [ext_resource type="Texture2D" uid="uid://dddenph2txf1h" path="res://Assets/Grid.png" id="1_hr4mn"]
+[ext_resource type="Texture2D" uid="uid://dj1olp7v7y623" path="res://Assets/Border.png" id="1_or4n4"]
 
 [node name="main" type="Node"]
 
@@ -10,6 +11,7 @@ zoom = Vector2(0.5, 0.5)
 [node name="Border" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("1_or4n4")
 
 [node name="GridTexture" type="TextureRect" parent="Border"]
 offset_right = 40.0

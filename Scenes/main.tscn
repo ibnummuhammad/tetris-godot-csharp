@@ -13,6 +13,7 @@ offset_left = -256.0
 offset_top = -496.0
 offset_right = 1794.0
 offset_bottom = 3474.0
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_or4n4")
 
 [node name="GridTexture" type="TextureRect" parent="Border"]

@@ -9,7 +9,7 @@ public partial class shared : Node
 	}
 
 	private Dictionary<Tetromino, List<Vector2>> cells;
-	Dictionary<string, string> citiesq;
+	Dictionary<Tetromino, string> citiesq;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,10 +17,10 @@ public partial class shared : Node
 		// cells = new Dictionary<Tetromino, List<Vector2>>(){
 		// 	{Tetromino.I,List}
 		// }
-		citiesq = new Dictionary<string, string>(){
-			{"UK", "London, Manchester, Birmingham"},
-			{"USA", "Chicago, New York, Washington"},
-			{"India", "Mumbai, New Delhi, Pune"}
+		citiesq = new Dictionary<Tetromino, string>(){
+			{Tetromino.I, "London, Manchester, Birmingham"},
+			{Tetromino.O, "Chicago, New York, Washington"},
+			{Tetromino.T, "Mumbai, New Delhi, Pune"}
 		};
 		var bigCities = new List<string>()
 		{
@@ -29,7 +29,7 @@ public partial class shared : Node
 			"Mumbai",
 			"Chicago"
 		};
-		GD.Print("disitu");
+		GD.Print("baru");
 		GD.Print(bigCities.GetType());
 		GD.Print(bigCities);
 	}

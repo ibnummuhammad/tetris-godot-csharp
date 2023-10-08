@@ -17,7 +17,7 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-Shared="*res://Scripts/shared.cs"
+Shared="*res://Scripts/Shared.cs"
 
 [display]
 

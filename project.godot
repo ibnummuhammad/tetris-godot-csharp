@@ -11,23 +11,9 @@ config_version=5
 [application]
 
 config/name="Tetris Godot C#"
-run/main_scene="res://Scenes/main.tscn"
-config/features=PackedStringArray("4.1", "C#", "Forward Plus")
-config/icon="res://Assets/icon.svg"
-
-[autoload]
-
-Shared="*res://Scripts/Shared.cs"
-
-[display]
-
-window/size/viewport_width=324
-window/stretch/mode="canvas_items"
+config/features=PackedStringArray("4.1", "Forward Plus")
+config/icon="res://Assets/tetris-svgrepo-com.svg"
 
 [dotnet]
 
 project/assembly_name="Tetris Godot C#"
-
-[rendering]
-
-environment/defaults/default_clear_color=Color(0.0941176, 0.266667, 0.419608, 1)

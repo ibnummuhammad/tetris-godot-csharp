@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public partial class Shared : Node
 {
-	enum Tetromino
+	public enum Tetromino
 	{
 		I, O, T, J, L, S, Z
 	}

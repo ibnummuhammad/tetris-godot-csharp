@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://mhs1q1xuyavl"]
+[gd_scene load_steps=3 format=3 uid="uid://ct3mks51imk26"]
 
-[ext_resource type="Texture2D" uid="uid://dddenph2txf1h" path="res://Assets/Grid.png" id="1_hr4mn"]
-[ext_resource type="Texture2D" uid="uid://dj1olp7v7y623" path="res://Assets/Border.png" id="1_or4n4"]
+[ext_resource type="Texture2D" uid="uid://dlpcfqhpnkmpp" path="res://Assets/Grid.png" id="1_lix8o"]
+[ext_resource type="Texture2D" uid="uid://bf5lcxgeyhwjw" path="res://Assets/Border.png" id="1_vmdgq"]
 
 [node name="main" type="Node"]
 
@@ -14,7 +14,7 @@ offset_top = -496.0
 offset_right = 1794.0
 offset_bottom = 3474.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_or4n4")
+texture = ExtResource("1_vmdgq")
 
 [node name="GridTexture" type="TextureRect" parent="Border"]
 layout_mode = 1
@@ -29,5 +29,5 @@ offset_right = 959.0
 offset_bottom = 1928.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_hr4mn")
+texture = ExtResource("1_lix8o")
 stretch_mode = 1

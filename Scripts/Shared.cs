@@ -38,8 +38,15 @@ public partial class Shared : Node
 		};
 		wallKicksJlostz = new List<List<Vector2>>()
 		{
-			
-		}
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,1),new Vector2(0,-2),new Vector2(-1,-2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(1,0),new Vector2(-1,-1),new Vector2(0,2),new Vector2(1,2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(1,0),new Vector2(1,-1),new Vector2(0,2),new Vector2(1,2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,1),new Vector2(0,-2),new Vector2(-1,-2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(1,0),new Vector2(1,1),new Vector2(0,-2),new Vector2(1,-2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,-1),new Vector2(0,2),new Vector2(-1,2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,-1),new Vector2(0,2),new Vector2(-1,2)}},
+			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(1,1),new Vector2(0,-2),new Vector2(1,-2)}},
+		};
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

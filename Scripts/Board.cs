@@ -24,5 +24,6 @@ public partial class Board : Node
 	public void SpawnTetromino(Shared.Tetromino type)
 	{
 		Resource tetrominoData = new Shared().data[type];
+		Node2D tetromino = (Node2D)tetrominoScene.Instantiate();
 	}
 }

@@ -9,6 +9,7 @@ public partial class Shared : Node
 	}
 
 	private Dictionary<Tetromino, List<Vector2>> cells;
+	private Dictionary<Tetromino, Resource> data;
 	private List<List<Vector2>> wallKicksI;
 	private List<List<Vector2>> wallKicksJlostz;
 
@@ -46,6 +47,17 @@ public partial class Shared : Node
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,-1),new Vector2(0,2),new Vector2(-1,2)}},
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,-1),new Vector2(0,2),new Vector2(-1,2)}},
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(1,1),new Vector2(0,-2),new Vector2(1,-2)}},
+		};
+
+		data = new Dictionary<Tetromino, Resource>()
+		{
+			{Tetromino.I, GD.Load("res://Resources/i_piece_data.tres")},
+			{Tetromino.J, GD.Load("res://Resources/j_piece_data.tres")},
+			{Tetromino.L, GD.Load("res://Resources/l_piece_data.tres")},
+			{Tetromino.O, GD.Load("res://Resources/o_piece_data.tres")},
+			{Tetromino.S, GD.Load("res://Resources/s_piece_data.tres")},
+			{Tetromino.T, GD.Load("res://Resources/t_piece_data.tres")},
+			{Tetromino.Z, GD.Load("res://Resources/z_piece_data.tres")},
 		};
 	}
 

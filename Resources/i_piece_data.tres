@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_w1806")
 tetrominoType = 0
-spawnPosition = Vector2(0, 0)
+spawnPosition = Vector2(-24, -456)

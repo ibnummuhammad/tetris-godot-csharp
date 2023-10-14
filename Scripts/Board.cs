@@ -21,9 +21,12 @@ public partial class Board : Node
 	{
 	}
 
-	public void SpawnTetromino(Shared.Tetromino type)
+	public void SpawnTetromino(Shared.Tetromino type, bool isNextPiece)
 	{
 		Resource tetrominoData = new Shared().data[type];
 		Tetromino tetromino = tetrominoScene.Instantiate() as Tetromino;
+
+		tetromino.tetrominoData = tetrominoData;
+		tetromino.isNextPiece = isNextPiece;
 	}
 }

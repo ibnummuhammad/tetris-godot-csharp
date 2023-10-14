@@ -12,6 +12,8 @@ public partial class Shared : Node
 	private Dictionary<Tetromino, Resource> data;
 	private List<List<Vector2>> wallKicksI;
 	private List<List<Vector2>> wallKicksJlostz;
+	private List<Vector2> clockwiseRotationMatrix;
+	private List<Vector2> counterClockwiseRotationMatrix;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,6 +28,7 @@ public partial class Shared : Node
 			{Tetromino.T,new List<Vector2>(){new Vector2(0,1),new Vector2(-1,0),new Vector2(0,0),new Vector2(1,0)}},
 			{Tetromino.Z,new List<Vector2>(){new Vector2(-1,1),new Vector2(0,1),new Vector2(0,0),new Vector2(1,0)}}
 		};
+
 		wallKicksI = new List<List<Vector2>>()
 		{
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(-2,0),new Vector2(1,0),new Vector2(-2,-1),new Vector2(1,2)}},
@@ -37,6 +40,7 @@ public partial class Shared : Node
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(1,0),new Vector2(-2,0),new Vector2(1,-2),new Vector2(-2,1)}},
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(2,0),new Vector2(-1,2),new Vector2(2,-1)}},
 		};
+
 		wallKicksJlostz = new List<List<Vector2>>()
 		{
 			{new List<Vector2>(){new Vector2(0,0),new Vector2(-1,0),new Vector2(-1,1),new Vector2(0,-2),new Vector2(-1,-2)}},
@@ -59,6 +63,9 @@ public partial class Shared : Node
 			{Tetromino.T, GD.Load("res://Resources/t_piece_data.tres")},
 			{Tetromino.Z, GD.Load("res://Resources/z_piece_data.tres")},
 		};
+
+		clockwiseRotationMatrix = new List<Vector2>() { new Vector2(0, -1), new Vector2(1, 0) };
+		counterClockwiseRotationMatrix = new List<Vector2>() { new Vector2(0, 1), new Vector2(-1, 0) };
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

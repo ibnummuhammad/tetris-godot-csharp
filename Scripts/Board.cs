@@ -21,7 +21,8 @@ public partial class Board : Node
 	{
 	}
 
-	private void SpawnTetromino(Shared.Tetromino type)
+	public void SpawnTetromino(Shared.Tetromino type)
 	{
+		var tetrominoData = new Shared().data[type];
 	}
 }

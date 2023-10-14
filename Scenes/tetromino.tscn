@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://df7smgkd14j1j"]
+
+[node name="Tetromino" type="Node2D"]

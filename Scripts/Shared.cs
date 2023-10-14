@@ -9,7 +9,7 @@ public partial class Shared : Node
 	}
 
 	private Dictionary<Tetromino, List<Vector2>> cells;
-	private Dictionary<Tetromino, Resource> data;
+	public Dictionary<Tetromino, Resource> data;
 	private List<List<Vector2>> wallKicksI;
 	private List<List<Vector2>> wallKicksJlostz;
 	private List<Vector2> clockwiseRotationMatrix;

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cycxmjhv2bxw1"]
+
+[ext_resource type="Texture2D" uid="uid://ckyua8siir4ss" path="res://Assets/Yellow.png" id="1_sov8x"]
+[ext_resource type="Script" path="res://Scripts/PieceData.cs" id="2_tk52w"]
+
+[resource]
+script = ExtResource("2_tk52w")
+pieceTexture = ExtResource("1_sov8x")
+tetrominoType = 1
+spawnPosition = Vector2(-24, -456)

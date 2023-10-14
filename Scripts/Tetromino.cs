@@ -8,8 +8,8 @@ public partial class Tetromino : Node2D
 
 	private Dictionary<String, int> bounds;
 
-	private Shared.Tetromino tetrominoData;
-	private bool isNextPiece;
+	public Shared.Tetromino tetrominoData;
+	public bool isNextPiece;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

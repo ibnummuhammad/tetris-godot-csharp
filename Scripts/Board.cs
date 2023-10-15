@@ -21,12 +21,21 @@ public partial class Board : Node
 	{
 	}
 
-	public void SpawnTetromino(Shared.Tetromino type, bool isNextPiece)
+	public void SpawnTetromino(Shared.Tetromino type, bool isNextPiece, Vector2 spawnPosition)
 	{
 		Resource tetrominoData = new Shared().data[type];
 		Tetromino tetromino = tetrominoScene.Instantiate() as Tetromino;
 
 		tetromino.tetrominoData = tetrominoData;
 		tetromino.isNextPiece = isNextPiece;
+
+		if (isNextPiece == false)
+		{
+			// AddChild(tetromino);
+		}
+		else
+		{
+			tetromino.Scale = new Vector2((float)0.5, (float)0.5);
+		}
 	}
 }

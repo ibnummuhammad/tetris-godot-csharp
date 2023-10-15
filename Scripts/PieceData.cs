@@ -4,11 +4,11 @@ using System;
 public partial class PieceData : Resource
 {
 	[Export]
-	private Texture pieceTexture;
+	public Texture pieceTexture;
 
 	[Export]
-	private Shared.Tetromino tetrominoType;
+	public Shared.Tetromino tetrominoType;
 
 	[Export]
-	private Vector2 spawnPosition;
+	public Vector2 spawnPosition;
 }

@@ -7,6 +7,9 @@ public partial class PieceSpawner : Node
 	public override void _Ready()
 	{
 		Array tetrominoArray = Enum.GetValues(typeof(Shared.Tetromino));
+		Random random = new Random();
+		int tetrominoArrayIndex = random.Next(tetrominoArray.Length);
+		Object currentTetromino = tetrominoArray.GetValue(tetrominoArrayIndex);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

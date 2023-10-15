@@ -21,7 +21,7 @@ public partial class Board : Node
 	{
 	}
 
-	public void SpawnTetromino(Shared.Tetromino type, bool isNextPiece, Vector2 spawnPosition)
+	public void SpawnTetromino(Shared.Tetromino type, bool isNextPiece, Vector2? spawnPosition)
 	{
 		Resource tetrominoData = new Shared().data[type];
 		Tetromino tetromino = tetrominoScene.Instantiate() as Tetromino;

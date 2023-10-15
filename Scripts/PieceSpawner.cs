@@ -11,7 +11,9 @@ public partial class PieceSpawner : Node
 		Array tetrominoArray = Enum.GetValues(typeof(Shared.Tetromino));
 		Random random = new Random();
 		int tetrominoArrayIndex = random.Next(tetrominoArray.Length);
-		Object currentTetromino = tetrominoArray.GetValue(tetrominoArrayIndex);
+		Shared.Tetromino currentTetromino = (Shared.Tetromino)tetrominoArray.GetValue(tetrominoArrayIndex);
+
+		board.SpawnTetromino(currentTetromino, false, null);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

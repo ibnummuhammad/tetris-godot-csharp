@@ -6,7 +6,7 @@ public partial class PieceSpawner : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Node board = GetNode("../Board") as Board;
+		Board board = GetNode("../Board") as Board;
 
 		Array tetrominoArray = Enum.GetValues(typeof(Shared.Tetromino));
 		Random random = new Random();

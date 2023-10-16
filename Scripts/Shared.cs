@@ -8,12 +8,12 @@ public partial class Shared : Node
 		I, O, T, J, L, S, Z
 	}
 
-	private Dictionary<Tetromino, List<Vector2>> cells;
+	public Dictionary<Tetromino, List<Vector2>> cells;
 	public Dictionary<Tetromino, Resource> data;
-	private List<List<Vector2>> wallKicksI;
-	private List<List<Vector2>> wallKicksJlostz;
-	private List<Vector2> clockwiseRotationMatrix;
-	private List<Vector2> counterClockwiseRotationMatrix;
+	public List<List<Vector2>> wallKicksI;
+	public List<List<Vector2>> wallKicksJlostz;
+	public List<Vector2> clockwiseRotationMatrix;
+	public List<Vector2> counterClockwiseRotationMatrix;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

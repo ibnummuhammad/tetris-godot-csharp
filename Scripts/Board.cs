@@ -10,6 +10,7 @@ public partial class Board : Node
 	private int rowCount = 20;
 	private Shared.Tetromino nextTetromino;
 	private List<Shared.Tetromino> tetrominos;
+	private PieceData tetrominoData;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -23,7 +24,7 @@ public partial class Board : Node
 
 	public void SpawnTetromino(Shared.Tetromino type, bool isNextPiece, Vector2? spawnPosition)
 	{
-		Resource tetrominoData = GetNode<Shared>("/root/Shared").data[type];
+		tetrominoData = GetNode<Shared>("/root/Shared").data[type];
 		Tetromino tetromino = tetrominoScene.Instantiate() as Tetromino;
 
 		tetromino.tetrominoData = tetrominoData;

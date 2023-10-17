@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://8wuse1exrgll"]
+[gd_scene load_steps=4 format=3 uid="uid://8wuse1exrgll"]
 
 [ext_resource type="Script" path="res://Scripts/Piece.cs" id="1_8evv6"]
 [ext_resource type="Texture2D" uid="uid://ckyua8siir4ss" path="res://Assets/Yellow.png" id="2_kryqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suuyc"]
 
 [node name="Piece" type="Area2D"]
 script = ExtResource("1_8evv6")
@@ -11,3 +13,4 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_kryqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_suuyc")

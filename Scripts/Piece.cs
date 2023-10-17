@@ -17,4 +17,9 @@ public partial class Piece : Area2D
 	public override void _Process(double delta)
 	{
 	}
+
+	public void SetTexture(Texture2D texture)
+	{
+		sprite2D.Texture = texture;
+	}
 }

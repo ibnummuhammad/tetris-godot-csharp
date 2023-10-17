@@ -22,4 +22,9 @@ public partial class Piece : Area2D
 	{
 		sprite2D.Texture = texture;
 	}
+
+	public Vector2 GetSize()
+	{
+		return collisionShape2D.Shape.GetRect().Size;
+	}
 }

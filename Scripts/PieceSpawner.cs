@@ -3,10 +3,12 @@ using System;
 
 public partial class PieceSpawner : Node
 {
+	private Board board;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Board board = GetNode("../Board") as Board;
+		board = GetNode("../Board") as Board;
 
 		Array tetrominoArray = Enum.GetValues(typeof(Shared.Tetromino));
 		Random random = new Random();

@@ -32,6 +32,7 @@ public partial class Board : Node
 		if (isNextPiece == false)
 		{
 			tetromino.Position = (Vector2)tetrominoData.Get("spawnPosition");
+			AddChild(tetromino);
 		}
 		else
 		{

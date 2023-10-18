@@ -30,6 +30,11 @@ public partial class Tetromino : Node2D
 			piece.SetTexture((Texture2D)tetrominoData.pieceTexture);
 			piece.Position = cell * piece.GetSize();
 		}
+
+		if (isNextPiece == false)
+		{
+			Vector2 position = tetrominoData.spawnPosition;
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

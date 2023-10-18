@@ -9,7 +9,7 @@ public partial class Tetromino : Node2D
 	private Dictionary<String, int> bounds;
 	private List<Piece> pieces = new List<Piece>() { };
 
-	public Resource tetrominoData;
+	public PieceData tetrominoData;
 	private Shared shared;
 	public bool isNextPiece;
 	private PackedScene pieceScene;
@@ -27,6 +27,8 @@ public partial class Tetromino : Node2D
 			Piece piece = pieceScene.Instantiate() as Piece;
 			pieces.Add(piece);
 			AddChild(piece);
+			piece.SetTexture((Texture2D)tetrominoData.pieceTexture);
+			piece.Position = cell * piece.GetSize();
 		}
 	}
 

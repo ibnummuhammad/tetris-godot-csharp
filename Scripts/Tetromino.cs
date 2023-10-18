@@ -8,6 +8,7 @@ public partial class Tetromino : Node2D
 
 	private Dictionary<String, int> bounds;
 	private List<Piece> pieces = new List<Piece>() { };
+	List<List<Vector2>> wallKicks;
 
 	public PieceData tetrominoData;
 	private Shared shared;
@@ -34,6 +35,10 @@ public partial class Tetromino : Node2D
 		if (isNextPiece == false)
 		{
 			Vector2 position = tetrominoData.spawnPosition;
+			if (tetrominoData.tetrominoType == Shared.Tetromino.I)
+				wallKicks = shared.wallKicksI;
+			else
+				wallKicks = shared.wallKicksJlostz;
 		}
 	}
 

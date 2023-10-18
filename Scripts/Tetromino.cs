@@ -7,6 +7,7 @@ public partial class Tetromino : Node2D
 	private int rotationIndex = 0;
 
 	private Dictionary<String, int> bounds;
+	private List<Piece> pieces = new List<Piece>() { };
 
 	public Resource tetrominoData;
 	private Shared shared;
@@ -24,6 +25,8 @@ public partial class Tetromino : Node2D
 		foreach (Vector2 cell in tetrominoCells)
 		{
 			Piece piece = pieceScene.Instantiate() as Piece;
+			pieces.Add(piece);
+			AddChild(piece);
 		}
 	}
 

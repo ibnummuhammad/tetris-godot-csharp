@@ -11,12 +11,20 @@ public partial class Tetromino : Node2D
 	public Resource tetrominoData;
 	private Shared shared;
 	public bool isNextPiece;
+	private PackedScene pieceScene;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		pieceScene = (PackedScene)GD.Load("res://Scenes/piece.tscn");
+
 		shared = GetNode<Shared>("/root/Shared");
 		List<Vector2> tetrominoCells = shared.cells[(Shared.Tetromino)(int)tetrominoData.Get("tetrominoType")];
+
+		foreach (Vector2 cell in tetrominoCells)
+		{
+			Piece piece = pieceScene.Instantiate() as Piece;
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

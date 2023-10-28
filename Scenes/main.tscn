@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dlpcfqhpnkmpp" path="res://Assets/Grid.png" id="1_lix8o"]
 [ext_resource type="Texture2D" uid="uid://bf5lcxgeyhwjw" path="res://Assets/Border.png" id="1_vmdgq"]
-[ext_resource type="Script" path="res://Scripts/PieceSpawner.cs" id="3_7m7xd"]
-[ext_resource type="Script" path="res://Scripts/Board.cs" id="3_hjcwt"]
-[ext_resource type="PackedScene" uid="uid://df7smgkd14j1j" path="res://Scenes/tetromino.tscn" id="5_8074v"]
+[ext_resource type="Script" path="res://Scripts/PieceSpawner.cs" id="3_53mlq"]
+[ext_resource type="Script" path="res://Scripts/Board.cs" id="3_j8n38"]
+[ext_resource type="PackedScene" uid="uid://df7smgkd14j1j" path="res://Scenes/tetromino.tscn" id="5_mc7wa"]
 
 [node name="main" type="Node"]
 
@@ -36,8 +36,8 @@ texture = ExtResource("1_lix8o")
 stretch_mode = 1
 
 [node name="PieceSpawner" type="Node" parent="."]
-script = ExtResource("3_7m7xd")
+script = ExtResource("3_53mlq")
 
 [node name="Board" type="Node" parent="."]
-script = ExtResource("3_hjcwt")
-tetrominoScene = ExtResource("5_8074v")
+script = ExtResource("3_j8n38")
+tetrominoScene = ExtResource("5_mc7wa")

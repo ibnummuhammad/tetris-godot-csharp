@@ -4,3 +4,5 @@
 
 [node name="Tetromino" type="Node2D"]
 script = ExtResource("1_xeijg")
+
+[node name="Timer" type="Timer" parent="."]

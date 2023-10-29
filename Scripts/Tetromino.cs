@@ -45,8 +45,28 @@ public partial class Tetromino : Node2D
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("left"))
-			GD.Print("pencetkiri");
+			GD.Print("pencetleft");
+		else if (Input.IsActionJustPressed("right"))
+			GD.Print("pencetright");
+		else if (Input.IsActionJustPressed("down"))
+			GD.Print("pencetdown");
+		else if (Input.IsActionJustPressed("hard_drop"))
+			GD.Print("pencethard_drop");
+		else if (Input.IsActionJustPressed("rotate_left"))
+			GD.Print("pencetrotate_left");
+		else if (Input.IsActionJustPressed("rotate_right"))
+			GD.Print("pencetrotate_right");
 	}
+
+	// private void move(Vector2 direction)
+	// {
+
+	// }
+
+	// private void calculateGlobalPosition(Vector2 direction, Vector2 startingGlobalPosition)
+	// {
+
+	// }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

@@ -63,10 +63,16 @@ public partial class Tetromino : Node2D
 			GD.Print("pencetrotate_right");
 	}
 
-	private void Move(Vector2 direction)
+	private bool Move(Vector2 direction)
 	{
-		var newPosition = CalculateGlobalPosition(direction, GlobalPosition);
-		GD.Print(newPosition);
+		Nullable<Vector2> newPosition = CalculateGlobalPosition(direction, GlobalPosition);
+		if (newPosition != null)
+		{
+			Vector2 globalPosition = (Vector2)newPosition;
+			if (direction != Vector2.Down)
+				return true;
+		}
+		return false;
 	}
 
 	private Vector2? CalculateGlobalPosition(Vector2 direction, Vector2 startingGlobalPosition)

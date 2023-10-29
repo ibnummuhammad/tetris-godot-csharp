@@ -8,6 +8,7 @@ public partial class Tetromino : Node2D
 
 	private Dictionary<String, int> bounds;
 	private List<Piece> pieces = new List<Piece>() { };
+	private List<Piece> otherTetrominoesPieces = new List<Piece>() { };
 	List<List<Vector2>> wallKicks;
 
 	public PieceData tetrominoData;
@@ -45,7 +46,7 @@ public partial class Tetromino : Node2D
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("left"))
-			GD.Print("pencetleft");
+			Move(Vector2.Left);
 		else if (Input.IsActionJustPressed("right"))
 			GD.Print("pencetright");
 		else if (Input.IsActionJustPressed("down"))
@@ -58,15 +59,24 @@ public partial class Tetromino : Node2D
 			GD.Print("pencetrotate_right");
 	}
 
-	// private void move(Vector2 direction)
-	// {
+	private void Move(Vector2 direction)
+	{
+		CalculateGlobalPosition(direction, GlobalPosition);
+	}
 
-	// }
+	private void CalculateGlobalPosition(Vector2 direction, Vector2 startingGlobalPosition)
+	{
+		GD.Print(IsCollidingWithOtherTetrominos(direction, startingGlobalPosition));
+	}
 
-	// private void calculateGlobalPosition(Vector2 direction, Vector2 startingGlobalPosition)
-	// {
-
-	// }
+	private bool IsCollidingWithOtherTetrominos(Vector2 direction, Vector2 startingGlobalPosition)
+	{
+		foreach (Piece tetrominoPiece in otherTetrominoesPieces)
+			foreach (Piece piece in pieces)
+				if (startingGlobalPosition + piece.Position + direction * piece.GetSize() == tetrominoPiece.GlobalPosition)
+					return true;
+		return false;
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

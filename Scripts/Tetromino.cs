@@ -42,6 +42,12 @@ public partial class Tetromino : Node2D
 		}
 	}
 
+	public override void _Input(InputEvent @event)
+	{
+		if (Input.IsActionJustPressed("left"))
+			GD.Print("pencetkiri");
+	}
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{

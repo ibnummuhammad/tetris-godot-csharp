@@ -19,6 +19,10 @@ public partial class Tetromino : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		bounds = new Dictionary<string, int>()
+		{
+			{"min_x", -216}, {"max_x", 216}, {"max_y",457}
+		};
 		pieceScene = (PackedScene)GD.Load("res://Scenes/piece.tscn");
 
 		shared = GetNode<Shared>("/root/Shared");
@@ -48,9 +52,9 @@ public partial class Tetromino : Node2D
 		if (Input.IsActionJustPressed("left"))
 			Move(Vector2.Left);
 		else if (Input.IsActionJustPressed("right"))
-			GD.Print("pencetright");
+			Move(Vector2.Right);
 		else if (Input.IsActionJustPressed("down"))
-			GD.Print("pencetdown");
+			Move(Vector2.Down);
 		else if (Input.IsActionJustPressed("hard_drop"))
 			GD.Print("pencethard_drop");
 		else if (Input.IsActionJustPressed("rotate_left"))
@@ -61,12 +65,29 @@ public partial class Tetromino : Node2D
 
 	private void Move(Vector2 direction)
 	{
-		CalculateGlobalPosition(direction, GlobalPosition);
+		var newPosition = CalculateGlobalPosition(direction, GlobalPosition);
+		GD.Print(newPosition);
 	}
 
-	private void CalculateGlobalPosition(Vector2 direction, Vector2 startingGlobalPosition)
+	private Vector2? CalculateGlobalPosition(Vector2 direction, Vector2 startingGlobalPosition)
 	{
 		GD.Print(IsCollidingWithOtherTetrominos(direction, startingGlobalPosition));
+		if (IsCollidingWithOtherTetrominos(direction, startingGlobalPosition) is true)
+			return null;
+		if (!IsWithinGameBounds(direction, startingGlobalPosition))
+			return null;
+		return startingGlobalPosition + direction * pieces[0].GetSize().X;
+	}
+
+	private bool IsWithinGameBounds(Vector2 direction, Vector2 startingGlobalPosition)
+	{
+		foreach (Piece piece in pieces)
+		{
+			Vector2 newPosition = piece.Position + startingGlobalPosition + direction * piece.GetSize();
+			if (newPosition.X < bounds["min_x"] || newPosition.X > bounds["max_x"] || newPosition.Y >= bounds["max_y"])
+				return false;
+		}
+		return true;
 	}
 
 	private bool IsCollidingWithOtherTetrominos(Vector2 direction, Vector2 startingGlobalPosition)

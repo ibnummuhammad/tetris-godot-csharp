@@ -68,7 +68,7 @@ public partial class Tetromino : Node2D
 		Nullable<Vector2> newPosition = CalculateGlobalPosition(direction, GlobalPosition);
 		if (newPosition != null)
 		{
-			Vector2 globalPosition = (Vector2)newPosition;
+			GlobalPosition = (Vector2)newPosition;
 			if (direction != Vector2.Down)
 				return true;
 		}
